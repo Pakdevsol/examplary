@@ -1,0 +1,11 @@
+<%= form_for @post do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <%= f.label :user %>
+  <%= f.select :user_id, options_for_select(User.all.map{|a| [a.full_name, a.id] }) %>
+  <%= f.submit %>
+<% end %>
